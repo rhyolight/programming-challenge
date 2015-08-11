@@ -1,2 +1,3 @@
 # programming-challenge
-Programming challenges for my son
+
+Programming challenges for my kids.
