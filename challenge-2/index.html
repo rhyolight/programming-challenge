@@ -1,0 +1,78 @@
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<div class="container">
+
+    <h1>Challenge 1</h1>
+
+    <p>Implement the <code>add</code> function in the source code of this page.</p>
+
+    <div style="width:50%">
+        <div class="input-group input-group-lg">
+            <span class="input-group-addon" id="firstNumberLabel">First Number</span>
+            <input type="text" id="firstNumber" class="form-control" placeholder="34" aria-describedby="firstNumberLabel">
+        </div>
+
+        <div class="input-group input-group-lg">
+            <span class="input-group-addon" id="secondNumberLabel">Second Number</span>
+            <input type="text" id="secondNumber" class="form-control" placeholder="12" aria-describedby="secondNumberLabel">
+        </div>
+
+        <div class="btn-group btn-group-lg">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span id="operation">Operation</span <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" id="operations">
+            <li><a href="#">add</a></li>
+            <li><a href="#">subtract</a></li>
+            <li><a href="#">multiply</a></li>
+            <li><a href="#">divide</a></li>
+          </ul>
+        </div>
+
+        <p>When you press the button below, the answer should appear below.</p>
+        <button type="button" class="btn btn-lg" id="go">GO</button>
+        <br/>
+    </div>
+
+    <div>
+        The answer is <mark>?</mark>.
+    </div
+
+</div>
+
+<script>
+
+function runOperation(firstNumber, secondNumber, operation) {
+    // Do a mathematical operation here and return the result.
+    // The "operation" may be "add", "subtract", "multiply", or "divide".
+
+    // HINT: use an if statement like this:
+    // if (operation == 'a thing') {
+    //     do something for 'a thing'
+    // } else if (operation == 'other thing') {
+    //     do something for 'other thing'
+    // }
+    
+}
+
+$(function() {
+    $('#go').click(function() {
+        var operations = ['add', 'subtract', 'multiply', 'divide'];
+        var a = parseFloat($('#firstNumber').val());
+        var b = parseFloat($('#secondNumber').val());
+        var operation = $('#operation').text();
+        if (! operation  || operations.indexOf(operation) < 0) {
+            $('mark').html('Unknown operation!');
+        } else {
+            var answer = runOperation(a, b, operation);
+            $('mark').html(answer);
+        }
+    });
+    $('#operations > li > a').click(function(e) {
+        $('#operation').text(this.innerHTML);
+    });
+});
+
+</script>
