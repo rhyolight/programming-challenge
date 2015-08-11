@@ -45,16 +45,15 @@
 <script>
 
 function runOperation(firstNumber, secondNumber, operation) {
-    // Do a mathematical operation here and return the result.
-    // The "operation" may be "add", "subtract", "multiply", or "divide".
-
-    // HINT: use an if statement like this:
-    // if (operation == 'a thing') {
-    //     do something for 'a thing'
-    // } else if (operation == 'other thing') {
-    //     do something for 'other thing'
-    // }
-
+    if (operation == 'subtract') {
+        return firstNumber - secondNumber;
+    } else if (operation == 'add') {
+        return firstNumber + secondNumber;
+    } else if (operation == 'multiply') {
+        return firstNumber * secondNumber;
+    } else if (operation == 'divide') {
+        return firstNumber / secondNumber;
+    }
 }
 
 $(function() {
